@@ -33,7 +33,7 @@ object Bcbp {
     fun parse(raw: String): BoardingPass? {
         val s = raw.trim()
         // A single-leg BCBP begins with 'M1' (M = format code, 1 = number of legs)
-        if (s.length < 60 || s.firstOrNull() != 'M') return null
+        if (s.length < 44 || s.firstOrNull() != 'M') return null
 
         return try {
             // Field positions per IATA spec (0-indexed substrings):
